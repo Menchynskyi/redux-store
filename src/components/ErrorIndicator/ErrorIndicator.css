@@ -1,0 +1,17 @@
+.error-indicator {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+.error-indicator img {
+    align-self: center;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.error-indicator span {
+    align-self: center;
+    color: #ca8300;
+    font-size: 2em;
+}
