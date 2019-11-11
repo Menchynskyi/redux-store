@@ -3,16 +3,19 @@ export default class BookstoreService {
     getBooks() {
         return [
             {
-                name: 'Twin Peaks',
-                id: 1
+                id: 1,
+                title: 'The Secret History of Twin Peaks',
+                author: 'Mark Frost'
             }, 
             {
-                name: 'Harry Potter',
-                id: 2
+                id: 2,
+                title: 'Harry Potter',
+                author: 'J. K. Rowling'             
             }, 
             {
-                name: 'Lord of the Rings',
-                id: 3
+                id: 3,
+                title: 'Lord of the Rings',
+                author: 'J. R. R. Tolkien'           
             } 
         ];
     }

@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import { BookstoreProvider } from '../BookstoreServiceContext/BookstoreServiceContext';
-import BookstoreService from '../../services/bookstore-service';
-import ErrorBoundry from '../ErrorBoundry/ErrorBoundry';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import withBookstoreService from '../Hoc/WithBookstoreService';
+import HomePage from '../Pages/HomePage';
+import CartPage from '../Pages/CartPage';
 
-const App = () => {
-    const { getBooks } = new BookstoreService();
-
-    const [books, setBooks] = useState(getBooks());
-
+const App = ({ bookstoreService }) => {
+    console.log(bookstoreService.getBooks());
     return (
-        <BookstoreProvider value={books}>
-            <ErrorBoundry>
-                <div className="jumbotron">
-                    <span>Redux Store</span>
-                </div>
-            </ErrorBoundry>
-        </BookstoreProvider>
+            <Switch>
+                <Route path="/" 
+                       component={HomePage}
+                       exact/>
+                <Route path="/cart" 
+                       component={CartPage}/>
+            </Switch>
     )
 }
 
-export default App;
+export default withBookstoreService()(App);
