@@ -1,9 +1,10 @@
 import React from 'react';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
 const CartPage = () => {
     return (
-        <div className="jumbotron">
-            <h1>Cart Page</h1>
+        <div>
+            <ShoppingCart />
         </div>
     )
 }

@@ -1,0 +1,14 @@
+.shopping-cart {
+    margin-top: 45px;
+  }
+  
+  .shopping-cart .total {
+    text-align: right;
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+  
+  .shopping-cart button {
+    margin-left: 5px;
+    margin-top: 5px;
+  }

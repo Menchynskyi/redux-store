@@ -1,0 +1,25 @@
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .logo {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 3em;
+    padding-left: 3.5rem;
+}
+
+.header .shopping-cart {
+    align-self: center;
+    font-size: 1.3em;
+    padding-right: 2rem;
+    margin-top: 1rem;
+}
+
+.header .shopping-cart .cart-icon {
+    font-size: 2rem;
+    color: #5692bb;
+    margin-right: 10px;
+}

@@ -3,10 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 import withBookstoreService from '../Hoc/WithBookstoreService';
 import HomePage from '../Pages/HomePage';
 import CartPage from '../Pages/CartPage';
+import Header from '../Header/Header';
 
 const App = ({ bookstoreService }) => {
-    console.log(bookstoreService.getBooks());
     return (
+        <main role="main" className="container">
+            <Header itemsCount={3} total={200}/>
             <Switch>
                 <Route path="/" 
                        component={HomePage}
@@ -14,6 +16,7 @@ const App = ({ bookstoreService }) => {
                 <Route path="/cart" 
                        component={CartPage}/>
             </Switch>
+        </main>
     )
 }
 
