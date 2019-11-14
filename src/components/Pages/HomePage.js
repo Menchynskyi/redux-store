@@ -1,12 +1,10 @@
 import React from 'react';
-import BookList from '../BookList/BookList';
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import BookListContainer from '../../containers/BookListContainer';
 
 const HomePage = () => {
     return (
         <div>
-            <BookList />
-            <ShoppingCart />
+            <BookListContainer />
         </div>
     )
 }

@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  margin-top: 8rem;
 }
 
 @keyframes lds-rolling {
@@ -32,7 +33,7 @@
     position: absolute;
     width: 80px;
     height: 80px;
-    border: 10px solid #19aeffb4;
+    border: 10px solid #19aeffea;
     border-top-color: transparent;
     border-radius: 50%;
   }

@@ -1,25 +1,54 @@
-const booksLoaded = (newBooks) => {
+const booksRequested = () => {
     return {
-        type: 'BOOKS_LOADED',
-        payload: newBooks
+        type: 'FETCH_BOOKS_REQUEST'
     }
 };
 
-const booksRequested = () => {
+const booksLoaded = (newBooks) => {
     return {
-        type: 'BOOKS_REQUESTED'
+        type: 'FETCH_BOOKS_SUCCESS',
+        payload: newBooks
     }
 };
 
 const booksError = (error) => {
     return {
-        type: 'BOOKS_ERROR',
+        type: 'FETCH_BOOKS_FAILURE',
         payload: error
     }
 };
 
+const fetchBooks = (bookstoreService) => () => (dispatch) => {
+    dispatch(booksRequested());
+    bookstoreService.getBooks()
+        .then((data) => dispatch(booksLoaded(data)))
+        .catch((err) => dispatch(booksError(err)));
+}
+
+const bookAddToCart = (bookId) => {
+    return {
+        type: 'BOOK_ADD_TO_CART',
+        payload: bookId
+    }
+};
+
+const bookDeleteFromCart = (bookId) => {
+    return {
+        type: 'BOOK_DELETE_FROM_CART',
+        payload: bookId
+    }
+};
+
+const bookCountDecreaseInCart = (bookId) => {
+    return {
+        type: 'BOOK_COUNT_DECREASE_IN_CART',
+        payload: bookId
+    }
+};
+
 export {
-    booksLoaded,
-    booksRequested,
-    booksError
+    fetchBooks,
+    bookAddToCart,
+    bookDeleteFromCart,
+    bookCountDecreaseInCart
 };

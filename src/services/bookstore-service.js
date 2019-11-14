@@ -24,15 +24,10 @@ export default class BookstoreService {
     ];
 
     getBooks() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() => {
-                if (Math.random() > 0.75) {
-                    reject(new Error('Something bad happened'));
-                } else {
-                    resolve(this.data);
-                }
+                resolve(this.data);
             }, 700);
         });
-    }
-    
+    };
 }
