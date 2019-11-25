@@ -2,7 +2,7 @@
     "name": "redux-store",
     "version": "0.1.0",
     "private": true,
-    "homepage": "http://gitname.github.io/redux-store",
+    "homepage": "https://menchynskyi.github.io/redux-store",
     "dependencies": {
         "axios": "^0.19.0",
         "react": "^16.11.0",
