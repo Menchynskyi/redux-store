@@ -13,7 +13,6 @@ import BookList from '../components/BookList/BookList';
 
 const BookListContainer = (props) => {
     const { error, books, loading, fetchBooks, onAddToCart } = props;
-    console.log(books)
 
     useEffect(() => {
         fetchBooks();
