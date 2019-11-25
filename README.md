@@ -1,0 +1,2 @@
+## Bookstore
+React Redux store
