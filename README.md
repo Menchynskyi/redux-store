@@ -1,2 +1,3 @@
 ## Bookstore
-React Redux store
+React Redux store.
+* [demo](https://menchynskyi.github.io/redux-store/)
