@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { fetchBooks, bookAddToCart } from '../actions';
 import compose from '../utils/compose';
+import PropTypes from 'prop-types';
 
 import withBookstoreService from '../components/Hoc/WithBookstoreService';
 import Spinner from '../components/Spinner/Spinner';
@@ -24,10 +25,10 @@ const BookListContainer = (props) => {
     if (error) {
         return <ErrorIndicator />
     }
-    
-    return <BookList 
-                books={books}
-                onAddToCart={onAddToCart}/>
+
+    return <BookList
+        books={books}
+        onAddToCart={onAddToCart} />
 };
 
 const mapStateToProps = ({ bookList: { books, loading, error } }) => {
@@ -40,6 +41,14 @@ const mapDispatchToProps = (dispatch, { bookstoreService }) => {
         onAddToCart: bookAddToCart
     }, dispatch);
 };
+
+BookListContainer.propTypes = {
+    error: PropTypes.bool,
+    books: PropTypes.arrayOf(PropTypes.object),
+    loading: PropTypes.bool,
+    fetchBooks: PropTypes.func.isRequired,
+    onAddToCart: PropTypes.func.isRequired
+}
 
 export default compose(
     withBookstoreService(),

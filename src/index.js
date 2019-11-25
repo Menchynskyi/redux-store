@@ -10,7 +10,7 @@ import { BookstoreServiceProvider } from './components/BookstoreServiceContext/B
 
 import store from './store';
 
-const bookstoreService = new BookstoreService(); 
+const bookstoreService = new BookstoreService();
 
 ReactDOM.render(
     <Provider store={store}>
@@ -21,5 +21,5 @@ ReactDOM.render(
                 </Router>
             </BookstoreServiceProvider>
         </ErrorBoundry>
-    </Provider>, 
+    </Provider>,
     document.getElementById('root'));

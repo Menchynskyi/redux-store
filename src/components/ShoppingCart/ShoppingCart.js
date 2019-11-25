@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bookDeleteFromCart, bookAddToCart, bookCountDecreaseInCart } from '../../actions';
+import PropTypes from 'prop-types';
 import './ShoppingCart.css';
 
 const ShoppingCart = ({ items, total, onInc, onDec, onDelete }) => {
@@ -15,19 +16,22 @@ const ShoppingCart = ({ items, total, onInc, onDec, onDelete }) => {
                 <td>{count}</td>
                 <td>${total}</td>
                 <td>
-                    <button 
+                    <button
                         className="btn btn-outline-danger btn-sm float-right"
-                        onClick={() => onDelete(id)}>
+                        onClick={() => onDelete(id)}
+                    >
                         <i className="fa fa-trash-o" />
                     </button>
-                    <button 
+                    <button
                         className="btn btn-outline-success btn-sm float-right"
-                        onClick={() => onInc(id)}>
+                        onClick={() => onInc(id)}
+                    >
                         <i className="fa fa-plus-circle" />
                     </button>
-                    <button 
+                    <button
                         className="btn btn-outline-warning btn-sm float-right"
-                        onClick={() => onDec(id)}>
+                        onClick={() => onDec(id)}
+                    >
                         <i className="fa fa-minus-circle" />
                     </button>
                 </td>
@@ -39,7 +43,7 @@ const ShoppingCart = ({ items, total, onInc, onDec, onDelete }) => {
         return (
             <div className="empty-shopping-cart">
                 <Link to="/">
-                    <i class="fa fa-shopping-basket" />
+                    <i className="fa fa-shopping-basket" />
                     <span>Your shopping cart is empty</span>
                 </Link>
             </div>
@@ -60,7 +64,7 @@ const ShoppingCart = ({ items, total, onInc, onDec, onDelete }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    { items.map(renderRow) }
+                    {items.map(renderRow)}
                 </tbody>
             </table>
 
@@ -76,10 +80,18 @@ const mapStateToProps = ({ shoppingCart: { cartItems, orderTotal } }) => {
     }
 };
 
-const mapDispatchToProps =  {
+const mapDispatchToProps = {
     onInc: (id) => bookAddToCart(id),
     onDec: (id) => bookCountDecreaseInCart(id),
     onDelete: (id) => bookDeleteFromCart(id)
-}
+};
+
+ShoppingCart.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object),
+    total: PropTypes.number,
+    onInc: PropTypes.func.isRequired,
+    onDec: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);
