@@ -13,13 +13,13 @@ import store from './store';
 const bookstoreService = new BookstoreService();
 
 ReactDOM.render(
-    <Provider store={store}>
-        <ErrorBoundry>
-            <BookstoreServiceProvider value={bookstoreService}>
-                <Router basename={process.env.PUBLIC_URL}>
-                    <App />
-                </Router>
-            </BookstoreServiceProvider>
-        </ErrorBoundry>
-    </Provider>,
-    document.getElementById('root'));
+  <Provider store={store}>
+    <ErrorBoundry>
+      <BookstoreServiceProvider value={bookstoreService}>
+        <Router basename={process.env.PUBLIC_URL}>
+          <App />
+        </Router>
+      </BookstoreServiceProvider>
+    </ErrorBoundry>
+  </Provider>,
+  document.getElementById('root'));
